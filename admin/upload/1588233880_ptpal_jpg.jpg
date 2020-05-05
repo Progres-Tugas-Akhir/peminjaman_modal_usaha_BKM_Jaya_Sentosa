@@ -1,0 +1,932 @@
+<html>
+<head>
+	<title>PT.PAL INDONESIA(Persero)</title>
+	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/img/logo.png"/>
+    <link rel="stylesheet" type="text/css" href="/yamm.css">
+	<style type="text/css">
+        div.sosial{
+            margin: 1px;
+            display: block;
+        }
+        div.sosial img{
+            max-width: 22px;
+        }
+        .title-with-rule{
+            font-weight: bold;
+            border-bottom: 3px solid #004595;
+            padding-bottom: 5px;
+        }
+        .btn-show-all-right{
+            position: absolute;
+            right: 15px;
+            background-color: #004595;
+            color: white;
+            padding: 6px 12px;
+            transition: 0.2s;
+            cursor: pointer;
+            font-size: 10px;
+        }
+        .btn-show-all-right.no-space{
+            right: 0;
+        }
+        .btn-show-all-right:hover{
+            background-color: black;
+            text-decoration: none;
+            color: white;
+        }
+        .center{
+            text-align:center;
+        }
+        @media(min-width: 992px){
+            .news img{
+                height: 120px;
+            }
+            .btn-show-all-right{
+                top: 5px;
+            }
+            .btn-show-all-right.no-space{
+                top: 5px;
+            }
+            /* img{
+                width: 100%;
+                height: 120px;
+                margin-bottom: 2px; 
+            } */
+        }
+        @media(max-width: 991px) and (min-width: 768px){
+            .news img{
+                height: 190px;
+            }
+            .btn-show-all-right{
+                top: -5px;
+            }
+            .btn-show-all-right.no-space{
+                top: 5px;
+            }
+            /* img{
+                width: 100%;
+                height: 180px;
+                margin-bottom: 2px; 
+            } */
+        }
+        @media(max-width: 767px){
+            .news img{
+                height: auto;
+            }
+            .img-wrapper{
+                background-color: rgba(0,0,0,0);
+            }
+            .news1{
+                margin-bottom: 10px;
+            }
+            .btn-show-all-right{
+                top: -5px;
+            }
+            .btn-show-all-right.no-space{
+                top: 0;
+            }
+            /* img{
+                width: 100%;
+                height: auto;
+                margin-bottom: 2px; 
+            } */
+        }
+        
+        @media (max-width: 991px){
+           .navbar-header {
+                float: none;
+            }
+            .navbar-toggle {
+                display: block;
+            }
+            .navbar-collapse {
+                border-top: 1px solid transparent;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+            }
+            .navbar-collapse.collapse {
+                display: none!important;
+            }
+            .navbar-nav {
+                float: none!important;
+                margin: 7.5px -15px;
+            }
+            .navbar-nav>li {
+                float: none;
+            }
+            .navbar-nav>li>a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .navbar-text {
+                float: none;
+                margin: 15px 0;
+            }
+            /* since 3.1.0 */
+            .navbar-collapse.collapse.in { 
+                display: block!important;
+            }
+            .collapsing {
+                overflow: hidden!important;
+            }
+        }
+        body{
+            background-color: #efefff;
+        }
+		*{
+			margin: 0;
+			padding: 0;
+            font-family: Helvetica,"Helvetica Neue",Arial,sans-serif;
+		}
+        div.slider-image{
+            background-position: center;background-repeat: no-repeat;background-size: cover;width: 100%;
+        }
+		.top-section{
+			position: relative;
+			height: 80px;
+            background-color: white;
+            border-bottom: 1px solid #bbbbbb;
+		}
+        .top-img{
+            min-width: 120px;
+            min-height: 60px;
+            height: 80px;
+            top: 0;
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+		#logo{
+            width: 20%;
+			left: 50px;
+			background-size: 100%;
+			background-image: url("/img/logobesar.png"); 
+		}
+		#iso{
+			right: 50px;
+			width: 12%;
+			background-size: contain;
+			background-image: url("/img/bumn2.png");
+		}
+		.navbar *{
+			font-weight: bold;
+            color: #05438c;
+		}
+        .navbar{
+            z-index: 999;
+            margin-bottom: 0;
+            width: 100%;
+            border-radius: 0;
+            background-color: rgba(194, 193, 193, 0.77);
+            border-bottom: 1px solid #b7b7b7;
+            /* box-shadow: 0px 1px 2px #585861; */
+        }
+        .navbar-nav li.active a{
+            color : #022752;
+        }
+		.navbar-toggle{
+            background-color: #c2c1c1;
+        }
+        .navbar-toggle *{
+            background-color: white;
+        }
+        .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+            display: block;
+            width: 100%;
+            line-height: 1;
+        }
+        div.container{
+            max-width: 1360px !important;
+            /* width: calc(100% - 30px); */
+        }
+        .container-white{
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.51);
+        }
+        img.img-full{
+            width: 100%;
+        }
+        .news1-title{
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        .news1-date{
+            font-size: 12px;
+            font-weight:bold;
+        }
+        .news1-text{
+            font-size: 13px;
+            margin-top: 10px;
+            text-align: justify;
+        }
+        @media  screen and (min-width: 992px) {
+            .divider-right{
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                right: 0px;
+                background-color: rgb(166, 114, 79);
+                display: flex;
+                flex-flow: column;
+            }
+            .divider-left{
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                left: 0px;
+                background-color: rgb(166, 114, 79);
+                display: flex;
+                flex-flow: column;
+            }
+            .divider-bottom-relative{
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                position: relative;
+                background-color: rgb(166, 114, 79);
+                margin: 10px 0px;
+            }
+        }
+        .divider-bold-bottom-relative{
+            margin-top: 10px;
+            background-color: #2b669a;
+            width: 100%;
+            height: 3px;
+            position: relative;
+        }
+        footer{
+            box-shadow: 0 1px 1px black;
+            border-top: 1px solid black;
+            /* box-shadow: 0px 0px 4px #476ecc; */
+            background: #008cbd; /* Old browsers */
+            background: -moz-linear-gradient(left, #008cbd 1%, #0280b0 22%, #015d8f 23%, #034b7d 52%, #00295f 82%, #03558d 82%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, #008cbd 1%,#0280b0 22%,#015d8f 23%,#034b7d 52%,#00295f 82%,#03558d 82%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, #008cbd 1%,#0280b0 22%,#015d8f 23%,#034b7d 52%,#00295f 82%,#03558d 82%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008cbd', endColorstr='#03558d',GradientType=1 );
+            /*background-image: url("/img/blue.svg");*/
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* margin-top: 20px; */
+            width:100%;
+            padding: 2px;
+            /*background-color: #2b669a;*/
+            color: white;
+        }
+        footer *{
+            margin: 4px;
+        }
+        div.link-image{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 30px;
+            height: 30px;
+            padding-left: 45px;
+            margin-bottom: 10px;
+        }
+        div.link-image a{
+            color: white;
+            font-size: 12px;
+        }
+        -webkit-scrollbar {
+            width: 8px;
+        }
+        -webkit-scrollbar-thumb {
+            background-color: #03428b;
+            outline: 1px solid black;
+        }
+        .gallery-wrapper{
+            background-color: white;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.64);
+            padding: 2px;
+        }
+        .gallery-image{
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+        }
+        @media (min-width: 768px) {
+            .gallery-image{
+                height: 100px;
+            }
+        }
+        @media(max-width: 767px){
+            .gallery-image{
+                height: 55px;
+            }
+        }
+        .small-margin{
+            padding: 2px;
+            margin: 0;
+        }
+        .flexslider{
+            margin-bottom: 15px !important;
+        }
+        .flex-next{
+            right: 0 !important;
+        }
+        .flex-prev{
+            left: 0 !important;
+        }
+        .flex-control-nav{
+            display: none;
+        }
+        .image-slider{
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 130px;
+            box-shadow: 0px 0px 1px gray;
+        }
+        .artikel-title{
+            font-weight:bold;
+        }
+        div.image{
+            box-shadow: 0 0 1px dimgray;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 160px;
+            cursor: pointer;
+            transition: 1s;
+            opacity: 0.95;
+        }
+        div.image:hover{
+            opacity: 1;
+            box-shadow: 0 0 1px black;
+        }
+        .produk-title,.fasilitas-title{
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .produk-title:hover,.fasilitas-title:hover{
+            color: #1b6d85;
+            text-decoration: underline;
+        }
+        /*@media (min-width: 768px) {
+            .sidebar-nav .navbar .navbar-collapse {
+                padding: 0;
+                max-height: none;
+            }
+            .sidebar-nav .navbar ul {
+                float: none;
+            }
+            .sidebar-nav .navbar ul:not {
+                display: block;
+            }
+            .sidebar-nav .navbar li {
+                float: none;
+                display: block;
+            }
+            .sidebar-nav .navbar li a {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+        }*/
+        .center-wrapper{
+            width: 100%;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+        }
+        .margin{
+            margin: 7px;
+        }
+        .content-body{
+            padding: 15px;
+        }
+        .btn-default.btn-gradient{
+            border:1px solid #d7dada; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px;font-family:helvetica, sans-serif; padding: 7px 10px 7px 10px; text-decoration:none; display:inline-block;font-weight:bold; color: #000000;
+             background-color: #f4f5f5; background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f5f5), to(#dfdddd));
+             background-image: -webkit-linear-gradient(top, #f4f5f5, #dfdddd);
+             background-image: -moz-linear-gradient(top, #f4f5f5, #dfdddd);
+             background-image: -ms-linear-gradient(top, #f4f5f5, #dfdddd);
+             background-image: -o-linear-gradient(top, #f4f5f5, #dfdddd);
+             background-image: linear-gradient(to bottom, #f4f5f5, #dfdddd);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f5f5, endColorstr=#dfdddd);
+        }
+        .btn-default.btn-gradient:hover{
+            border:1px solid #bfc4c4;
+            background-color: #d9dddd; background-image: -webkit-gradient(linear, left top, left bottom, from(#d9dddd), to(#c6c3c3));
+            background-image: -webkit-linear-gradient(top, #d9dddd, #c6c3c3);
+            background-image: -moz-linear-gradient(top, #d9dddd, #c6c3c3);
+            background-image: -ms-linear-gradient(top, #d9dddd, #c6c3c3);
+            background-image: -o-linear-gradient(top, #d9dddd, #c6c3c3);
+            background-image: linear-gradient(to bottom, #d9dddd, #c6c3c3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d9dddd, endColorstr=#c6c3c3);
+        }
+        .btn-sm.btn-gradient{
+            font-size:9px;
+        }
+        .navbar .navbar-nav > li.dropdown:hover > a, 
+        .navbar .navbar-nav > li.dropdown:hover > a:hover,
+        .navbar .navbar-nav > li.dropdown:hover > a:focus {
+            background-color: rgb(231, 231, 231);
+            color: rgb(85, 85, 85);
+        }
+        li.dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+	</style>
+        <link rel="stylesheet" href="/flexslider/css/flexslider.css">
+    <style>
+        .img-wrapper{
+            background-color: black;
+            overflow: hidden;
+            position: relative;
+        }
+        .img-wrapper img{
+            height: 100%;
+        }
+        .news{
+            padding: 3px;
+            cursor: pointer;
+            -webkit-transition: all 0.2s;
+               -moz-transition: all 0.2s;
+                -ms-transition: all 0.2s;
+                 -o-transition: all 0.2s;
+                    transition: all 0.2s;
+        }
+        .news:hover{
+            background-color: #f0f0f3;
+        }
+        .news img,.news1 img,.news-gallery img{
+            width: 100%;
+            margin-bottom: 3px;
+        }
+        .news1,.news,.news-gallery{
+            margin-bottom: 10px;
+        }
+        .news h6{
+            margin: 0px;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        .news a{
+            font-size: 12px;
+        }
+        .news-grid li{
+            list-style-type: none;
+            width: calc(50% - 5px);
+            min-width: 120px;
+            display:inline-block;
+            cursor: pointer;
+        }
+        .news-grid li div{
+            margin-bottom: 15px;
+            transition: 0.2s;
+        }
+        .news-grid li div div.image{
+            width: 100%;
+            height: 170px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 0;
+            box-shadow: 0 0 1px #4b4d80;
+        }
+        .news-grid li div:hover{
+
+        }
+        .news-grid li div h6{
+            margin-top: 2px;
+            margin-bottom: 0;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .news-grid li div a{
+            font-size: 10px;
+            margin-top: 0;
+        }
+        #twitter-widget-0{
+            margin-top: 10px !important;
+            box-shadow: 0px 0px 1px #2aabd2 !important;
+        }
+
+        .news-gallery{
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .news1 img{
+            box-shadow: 0 0 1px #4b4d80;
+        }
+        .news-gallery h6{
+            margin-top: 5px;
+            margin-bottom: 0px;
+            font-weight: bold;
+        }
+        .news-gallery a{
+            margin: 0;
+            font-size:12px;
+        }
+        .news-gallery div.image{
+            width: 100%;
+            height: 160px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0px 0px 1px black;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+        <div class="inner-container container-white">
+                    <div class="top-section">
+                <div id="logo" class="top-img"></div>
+                <a href="?lang=ina" class="language-flag" style="width: 55px;position: absolute;right:  200px;top: 13px;">
+    <img src="/ina.png" style="width: 20px;display:  inline-block;"><span style="display:  inline-block;margin-left: 5px;">INA</span></a>
+    <a class="language-flag" style="width: 55px;position: absolute;right:  200px;top: 38px;" href="?lang=eng">
+        <img src="/eng.ico" style="width: 20px;display: inline-block;"> <span style="display:  inline-block;">ENG</span></a>
+                <a href="https://www.bumn.go.id/application">
+                    <div id="iso" class="top-img"></div>
+                </a>
+            </div>
+            <nav class="navbar yamm">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <!-- <a class="navbar-brand" href="#">WebSiteName</a> -->
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/?lang=ina">
+                                                        Beranda
+                                                        </a></li>
+                        <li class=""><a href="https://www.pal.co.id/product_&amp;_solution?lang=ina">
+                                                        Produk &amp; Solusi
+                                                        </a></li>
+                        <li class=""><a href="https://www.pal.co.id/our_commitment?lang=ina">
+                                                        Komitmen Kami
+                                                        </a></li>
+                        <li class=""><a href="https://www.pal.co.id/our_company?lang=ina">
+                                                        Tentang Perusahaan
+                                                        </a></li>
+                        <li class=""><a href="https://www.pal.co.id/publikasi?lang=ina">
+                                                        Publikasi
+                                                        </a></li>
+                        <li class=""><a href="/customer_info?lang=ina">Customer Info</a></li>
+                        <li class=""><a href="/contact_us?lang=ina">
+                                                        Kontak
+                                                        </a></li>
+                    </ul>
+                </div>
+              </div>
+            </nav>
+
+
+            <section class="content">
+                    <!-- <div class="container container-white"> -->
+        <div class="container-white">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="0"
+                                                        class="active"
+                                                    ></li>
+                                            <li data-target="#myCarousel" data-slide-to="1"
+                                                    ></li>
+                                            <li data-target="#myCarousel" data-slide-to="2"
+                                                    ></li>
+                                            <li data-target="#myCarousel" data-slide-to="3"
+                                                    ></li>
+                                            <li data-target="#myCarousel" data-slide-to="4"
+                                                    ></li>
+                                            <li data-target="#myCarousel" data-slide-to="5"
+                                                    ></li>
+                                            <li data-target="#myCarousel" data-slide-to="6"
+                                                    ></li>
+                                    </ol>
+                <div class="carousel-inner">
+                                            <div
+                                                            class="item active"
+                                                    >
+                            <img src="/slider/1574245503aCx.png" alt="">
+                        </div>
+                                            <div
+                                                            class="item"
+                                                    >
+                            <img src="/slider/1574245503sbW.png" alt="">
+                        </div>
+                                            <div
+                                                            class="item"
+                                                    >
+                            <img src="/slider/15711258328Wd.jpeg" alt="">
+                        </div>
+                                            <div
+                                                            class="item"
+                                                    >
+                            <img src="/slider/15699007565bD.jpeg" alt="">
+                        </div>
+                                            <div
+                                                            class="item"
+                                                    >
+                            <img src="/slider/1566445914QoB.jpeg" alt="">
+                        </div>
+                                            <div
+                                                            class="item"
+                                                    >
+                            <img src="/slider/1564366093YYP.jpg" alt="">
+                        </div>
+                                            <div
+                                                            class="item"
+                                                    >
+                            <img src="/slider/1521715102hNi.jpg" alt="">
+                        </div>
+                                    </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="content-body container-white">
+            <div class="row">
+                <div class="col-sm-12 col-md-7">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="title-with-rule">
+                                                                Informasi PT PAL INDONESIA
+                                                            </h5>
+                            <a href="https://www.pal.co.id/publikasi" class="btn-show-all-right">
+                                                                Lihat Semua
+                                                                </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="divider-right"></div>
+                            <div class="news1">
+                                                                <img src="/uploads/1578034890zZq-kompres.jpg" alt="dummy image" class="img-full">
+                                                                <h6 class="news1-title">
+                                                                        Partisipasi PT PAL Indonesia (Persero) Dalam Audit Konservasi Energi Kota Surabaya
+                                                                    </h6>
+                                <a href="#" class="news1-date moment-date">2020-01-03 13:00:00</a>
+                                <div class="news1-text">
+                                                                        ...
+                                                                    </div>
+                                <a href="https://www.pal.co.id/publikasi/artikel/1077" class="btn-default btn-gradient btn-sm">
+                                                                        Baca Lebih Lanjut
+                                                                        </a>
+                                    
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <!-- <div class="divider-left"></div> -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                                                                                                        <div class="col-sm-6 col-md-6">
+                                            <div class="news to-location" data-location="https://www.pal.co.id/publikasi/artikel/1076">
+                                                                                                <img src="/uploads/1578022601zx9-IMG_4917.JPG" alt="" />
+                                                                                                <h6>
+                                                                                                        Program Vokasi Welder PT PAL Pencetak Welder Berkualitas
+                                                                                                    </h6>
+                                                <a href="#" class="moment-date2">2020-01-03 08:00:00</a>
+                                            </div>
+                                        </div>
+                                                                                                                                                                <div class="col-sm-6 col-md-6">
+                                            <div class="news to-location" data-location="https://www.pal.co.id/publikasi/pengumuman/1074">
+                                                                                                <img src="/uploads/1577786004Riz-PIP AJA.jpg" alt="" />
+                                                                                                <h6>
+                                                                                                        Pemberitahuan Tender Pengadaan Jasa Tenaga Keamanan PT PAL Indonesia (Persero)
+                                                                                                    </h6>
+                                                <a href="#" class="moment-date2">2019-12-31 15:00:00</a>
+                                            </div>
+                                        </div>
+                                                                                                                        </div>
+                                        <div class="row">
+                                                                                                                        <div class="col-sm-6 col-md-6">
+                                            <div class="news to-location" data-location="https://www.pal.co.id/publikasi/artikel/1070">
+                                                                                                <img src="/uploads/1577434956Tk6-IMG_6309.JPG" alt="" />
+                                                                                                <h6>
+                                                                                                        Beyond The Limit: Disabilitas Bukan Pembatas dalam Berkarya
+                                                                                                    </h6>
+                                                <a href="#" class="moment-date2">2019-12-27 15:00:00</a>
+                                            </div>
+                                        </div>
+                                                                                                                                                                <div class="col-sm-6 col-md-6">
+                                            <div class="news to-location" data-location="https://www.pal.co.id/publikasi/news/1060">
+                                                                                                <img src="/uploads/15768523891vC-WhatsApp Image 2019-12-20 at 14.09.09.jpeg" alt="" />
+                                                                                                <h6>
+                                                                                                        Kapal Cepat Rudal Kelima dan Keenam TNI AL Masuki Tahapan Keel Laying
+                                                                                                    </h6>
+                                                <a href="#" class="moment-date2">2019-12-20 16:10:00</a>
+                                            </div>
+                                        </div>
+                                                                                                                                                                                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="divider-bottom-relative"></div> -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="title-with-rule">
+                                                                Galery PT PAL INDONESIA
+                                                                </h5>
+                            <a href="https://www.pal.co.id/publikasi/gallery" class="btn-show-all-right">
+                                                                Lihat Semua
+                                                                </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="news zoom-image" data-toggle="modal" data-target="#modal-zoom" data-url="1510024115.jpg" data-keterangan="President Director of PT PAL INDONESIA invited on board French Navy Ship &quot;AUVERGNE&quot; at Tanjung Perak Port of Surabaya" data-tanggal="2017-11-07">
+                                <img src="/galery/1510024115.jpg" alt="" style="border: 1px solid lightgray;border-radius: 3px;">
+                                <h6>President Director of PT PAL INDONESIA invited on board French Navy Ship &quot;AUVERGNE&quot; at Tanjung Perak Port of Surabaya</h6>
+                                <!-- <a href="https://www.pal.co.id/product_&amp;_solution/naval_shipbuilding/gallery">naval shipbuilding</a> -->
+                            </div>
+                        </div>
+                                                                                                <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="news zoom-image" data-toggle="modal" data-target="#modal-zoom" data-url="1511773586.jpg" data-keterangan="Direktur Utama PT PAL INDONESIA &quot;Budiman Saleh&quot; menerima penghargaan Good Performance dalam BUMN Performance Excellence Award  2017" data-tanggal="2017-11-06">
+                                <img src="/galery/1511773586.jpg" alt="" style="border: 1px solid lightgray;border-radius: 3px;">
+                                <h6>Direktur Utama PT PAL INDONESIA &quot;Budiman Saleh&quot; menerima penghargaan Good Performance dalam BUMN Performance Excellence Award  2017</h6>
+                                <!-- <a href="https://www.pal.co.id/product_&amp;_solution/naval_shipbuilding/gallery">naval shipbuilding</a> -->
+                            </div>
+                        </div>
+                                                                                                <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="news zoom-image" data-toggle="modal" data-target="#modal-zoom" data-url="1511774167.jpg" data-keterangan="Seremony Peresmian &amp; Penyerahan PKR 10514 Ke 2" data-tanggal="2017-10-30">
+                                <img src="/galery/1511774167.jpg" alt="" style="border: 1px solid lightgray;border-radius: 3px;">
+                                <h6>Seremony Peresmian &amp; Penyerahan PKR 10514 Ke 2</h6>
+                                <!-- <a href="https://www.pal.co.id/product_&amp;_solution/naval_shipbuilding/gallery">naval shipbuilding</a> -->
+                            </div>
+                        </div>
+                                                                    </div>
+                    <div class="row">
+                                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="news zoom-image" data-toggle="modal" data-target="#modal-zoom" data-url="1507608577.jpg" data-keterangan="Kunjungan Menteri BUMN Republik Indonesia ke PUSDIKLAT PT PAL Dalam Rangka Vokasi Welder" data-tanggal="2017-10-03">
+                                <img src="/galery/1507608577.jpg" alt="" style="border: 1px solid lightgray;border-radius: 3px;">
+                                <h6>Kunjungan Menteri BUMN Republik Indonesia ke PUSDIKLAT PT PAL Dalam Rangka Vokasi Welder</h6>
+                                <!-- <a href="https://www.pal.co.id/product_&amp;_solution/naval_shipbuilding/gallery">naval shipbuilding</a> -->
+                            </div>
+                        </div>
+                                                                                                <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="news zoom-image" data-toggle="modal" data-target="#modal-zoom" data-url="1507609316.jpg" data-keterangan="Peninjauan Menteri BUMN Republik Indonesia ke Bengkel Welder PUSDIKLAT PT PAL" data-tanggal="2017-10-03">
+                                <img src="/galery/1507609316.jpg" alt="" style="border: 1px solid lightgray;border-radius: 3px;">
+                                <h6>Peninjauan Menteri BUMN Republik Indonesia ke Bengkel Welder PUSDIKLAT PT PAL</h6>
+                                <!-- <a href="https://www.pal.co.id/product_&amp;_solution/naval_shipbuilding/gallery">naval shipbuilding</a> -->
+                            </div>
+                        </div>
+                                                                                                <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="news zoom-image" data-toggle="modal" data-target="#modal-zoom" data-url="1507778237.jpg" data-keterangan="Direktur Utama memberikan penjelasan pada Kunjungan Kerja Komisi 1 DPR RI" data-tanggal="2017-09-18">
+                                <img src="/galery/1507778237.jpg" alt="" style="border: 1px solid lightgray;border-radius: 3px;">
+                                <h6>Direktur Utama memberikan penjelasan pada Kunjungan Kerja Komisi 1 DPR RI</h6>
+                                <!-- <a href="https://www.pal.co.id/product_&amp;_solution/naval_shipbuilding/gallery">naval shipbuilding</a> -->
+                            </div>
+                        </div>
+                                                                                            </div>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 style="color: white;opacity: 0;border-bottom: 1px solid black;">Informasi PT. PAL INDONESIA</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="divider-left"></div>
+                                <a href="http://pal.co.id/publikasi/lowongan/977" target="_blank">
+                                    <img src="/1560935898.jpeg" alt="" style="width: 100%;">
+                                </a>
+                                                            
+                            <a class="twitter-timeline" data-height="400" data-dnt="true" data-theme="light" href="">Tweets by PTPAL_INDONESIA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="divider-bold-bottom-relative"></div> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flexslider">
+                        <h5 class="title-with-rule">
+                                                        Video PT PAL INDONESIA
+                                                        </h5>
+                        <a href="https://www.pal.co.id/publikasi/video" class="btn-show-all-right no-space">
+                                                        Lihat Semua
+                                                        </a>
+                        <ul class="slides">
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/cOvtvWBHSH8" title="30 Years of Proven Experiences" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/FEO367QiFbQ" title="Company Profile PT PAL Indonesia 2017" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/GFBbnkWHtu8 " title="123 meter SSV (BRP Davao Del Sur" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/shpWGlMwmk0 " title="36 tahun PT PAL INDONESIA" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/MsGH_SXVR0w" title="EPCI Madura BD Produced by PT PAL Indonesia" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/EFUM1ZqvfNQ" title="Upacara Hari Lahir PANCASILA" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                            <li>
+                                    <iframe width="230" height="150" src="https://www.youtube.com/embed/Oo5QWU8SEZk" title="Saya Indonesia Saya Pancasila" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+    <div class="modal fade" id="modal-zoom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: center !important;">
+                <img style="width: 100%;" src="/galery/" alt="" id="zoom-target2">
+                <strong id="zoom-text2"></strong>
+            </div>
+        </div>
+    </div>
+            </section>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8" style="margin: 0 !important;">
+                            <h5>PT PAL INDONESIA (PERSERO)</h5>
+                            <h5>
+                                                                KANTOR PUSAT
+                                                                : Ujung Surabaya Jawa Timur, Indonesia (60155), PO BOX 1134 - Email: headoffice@pal.co.id </h5>
+                            <h5>PERWAKILAN JAKARTA : Jl. Tanah Abang II No.27 Jakarta Pusat (10160)- Email: jakartabranch@pal.co.id</h5>
+                        </div>
+                        <div class="col-sm-12 col-md-2" style="margin: 0 !important;padding: 0px !important;">
+                            <div class="sosial pull-left">
+                                <img class="img-sosial" src="/img/web.PNG"> <a href="https://www.bumn.go.id/pal" style="color: white;cursor: pointer;">www.bumn.go.id/pal</a>
+                            </div>
+                            <div class="sosial pull-left">
+                                <img class="img-sosial" src="/img/bumn.png"> <a href="https://www.bumn.go.id/application" style="color: white;cursor: pointer;">www.bumn.go.id</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-2" style="margin: 0 !important;padding: 0px !important;">
+                            <div class="sosial pull-left">
+                                <img class="img-sosial" src="/img/tw.PNG"> <a href="@ptpal_indonesia" style="color: white;cursor: pointer;">@ptpal_indonesia</a>
+                            </div>
+                            <div class="sosial pull-left">
+                                <img class="img-sosial" src="/img/ins.PNG"> <a href="@ptpal_indonesia" style="color: white;cursor: pointer;">@ptpal_indonesia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
+    <script type="text/javascript">
+        $("img[data-filename]").addClass('margin');
+    </script>
+    <script type="text/javascript" src="/js/jquery.sticky.js"></script>
+    <script type="text/javascript">
+        moment.locale('id');
+        $('.moment-date').each(function (index, dateElem) {
+            var $dateElem = $(dateElem);
+            var formatted = moment($dateElem.text(), 'YYYY-MM-DD H:m:s').format('LLL');
+            $dateElem.text(formatted);
+        });
+        $('.moment-date2').each(function (index, dateElem) {
+            var $dateElem = $(dateElem);
+            var formatted = moment($dateElem.text(), 'YYYY-MM-DD H:m:s').format('LL');
+            $dateElem.text(formatted);
+        });
+        $(".to-location").click(function(){
+            window.location = $(this).data('location');
+        });
+    </script>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="/flexslider/js/jquery.flexslider.js"></script>
+    <script>
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                itemWidth: 230,
+                itemMargin: 10
+            }); 
+        });
+        $(".zoom-image").click(function () {
+            $("#zoom-target2").attr("src","/galery/"+$(this).data('url'));
+            $("#zoom-text2").text($(this).data('keterangan'));
+        });
+    </script>
+</body>
+</html>
