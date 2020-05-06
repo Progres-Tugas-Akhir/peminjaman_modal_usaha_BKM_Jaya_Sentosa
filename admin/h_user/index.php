@@ -3,13 +3,21 @@
 	error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 	include "../k.php";
 	session_start();
+<<<<<<< HEAD
 	$_SESSION['level'] != 'kepala' || !isset ($_SESSION['username']);
+=======
+	$_SESSION['level'] != 'pengurus' || !isset ($_SESSION['username']);
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 ?>
 <html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
+<<<<<<< HEAD
 		<title>Kepala Kelurahan</title>
+=======
+		<title>Pengurus Lembaga</title>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -52,7 +60,11 @@
 				<div class="navbar-header pull-left">
 					<a href="index.html" class="navbar-brand">
 						<small>
+<<<<<<< HEAD
 							BKM JAYA SENTOSA
+=======
+							BKM Jaya Sentosa
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 						</small>
 					</a>
 				</div>
@@ -63,8 +75,13 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="../assets/images/avatars/admin.png" alt="Admin" />
 								<span class="user-info">
+<<<<<<< HEAD
 									<small> Welcome,</small>
 									Pengurus
+=======
+									<small> Login Sebagai,</small>
+									<?php echo $_SESSION['level']; ?>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>

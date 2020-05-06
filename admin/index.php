@@ -45,7 +45,7 @@ if(isset($_POST['login'])){
 			$_SESSION['nama'] 		= "Admin";
 			?>
 		<script type="text/javascript">
-			alert("Anda Login Sebagai Admin Lembaga");
+			alert("Anda Login Sebagai Admin");
 		</script>
 		<?php
 			echo "<script>document.location='h_admin/index.php'</script>";

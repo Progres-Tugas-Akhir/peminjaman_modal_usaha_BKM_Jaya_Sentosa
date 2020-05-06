@@ -51,6 +51,7 @@ $data_pemasar = array();
           <div class="i_box bg-aq">
             <span class="i_box-icon"><i class="fa fa-book"></i></span>
             <?php
+<<<<<<< HEAD
             $queryp = "SELECT COUNT(id_anggota) as jml FROM tb_anggota";
             $sqlp = mysqli_query($connect, $queryp);
             $anggota = mysqli_fetch_assoc($sqlp);
@@ -58,6 +59,15 @@ $data_pemasar = array();
             <div class="i_box-content">
               <span class="i_box-text">Jumlah Peminjam</span>
               <span class="i_box-number"><?php echo $anggota['jml']; ?></span>
+=======
+            $queryp = "SELECT COUNT(id_file) as jml FROM tb_file";
+            $sqlp = mysqli_query($connect, $queryp);
+            $c_proyek = mysqli_fetch_assoc($sqlp);
+            ?>
+            <div class="i_box-content">
+              <span class="i_box-text">Jumlah Peminjam</span>
+              <span class="i_box-number"><?php echo $c_proyek['jml']; ?></span>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
             </div>
           </div>
         </div>
@@ -66,6 +76,7 @@ $data_pemasar = array();
           <div class="i_box bg-ye">
             <span class="i_box-icon"><i class="fa fa-camera"></i></span>
             <?php
+<<<<<<< HEAD
             $querype = "SELECT COUNT(su.id_survey) as jml FROM 'tb_survey' su JOIN 'tb_status' sa ON su.status = sa.status WHERE sa.status='1'";
             echo($querype);
             $sqlpe = mysqli_query($connect, $querype);
@@ -74,6 +85,15 @@ $data_pemasar = array();
             <div class="i_box-content">
               <span class="i_box-text">Jumlah survei yang diterima</span>
               <span class="i_box-number"><?php echo $survey['jml']; ?></span>
+=======
+            $querype = "SELECT COUNT(id_gambar) as jml FROM tb_gambar";
+            $sqlpe = mysqli_query($connect, $querype);
+            $c_penyimpanan = mysqli_fetch_assoc($sqlpe);
+            ?>
+            <div class="i_box-content">
+              <span class="i_box-text">Jumlah survei yang diterima</span>
+              <span class="i_box-number"><?php echo $c_penyimpanan['jml']; ?></span>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
             </div>
           </div>
         </div>

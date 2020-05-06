@@ -134,6 +134,15 @@ if(isset($_POST['delete'])){
 												<div class="modal-body">
 													<form class="form-horizontal" role="form" form action="" method="post" enctype="multipart/form-data">
 														<div class="form-group">
+<<<<<<< HEAD
+=======
+															<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> ID Proyek </label>
+															<div class="col-xs-12 col-sm-6">
+																<input type="text" name="id_proyek" class="col-xs-12 col-sm-12" required="" />
+															</div>
+														</div>
+														<div class="form-group">
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 															<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Proyek </label>
 															<div class="col-xs-12 col-sm-6">
 																<input type="text" name="nama_proyek" class="col-xs-12 col-sm-12" required="" />

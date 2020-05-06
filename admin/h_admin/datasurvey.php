@@ -72,6 +72,41 @@ if (isset($_POST['tambah'])) {
 
 		$query3 = "UPDATE tb_survey set nama_usaha='$nama_usaha', alamat_usaha='$alamat_usaha', nama_anggota='$nama_anggota', notelp_anggota='$notelp_anggota', email='$email', tanggal_survey='$tanggal_survey', gambar='$gambar', id_status='$id_status' WHERE id_survey='$id_survey'"; 
 
+  $query3 = "INSERT INTO tb_survey ( id_survey,nama_usaha,alamat_usaha,nama_anggota,notelp_anggota,email,tanggal_survey,gambar,id_status) 
+  VALUES ('$id_survey','$nama_usaha','$alamat_usaha','$nama_anggota','$notelp_anggota','$email','$tanggal_survey','$gambar','$id_status')";
+
+  if (mysqli_query($connect, $query3)){
+  ?>
+	  <script type="text/javascript">
+		  alert("Sukses Tambah Data Survey");
+	  </script>
+	  <?php
+	  echo"<script>document.location='index.php?datasurvey'</script>";
+  }
+  else{ 
+  ?>
+	  <script type="text/javascript">
+		  alert("GAGAL");
+	  </script>
+	  <?php
+	  echo"<script>document.location='index.php?datasurvey'</script>";
+  }		
+}
+
+if(isset($_POST['update'])){
+	$id_survey=$_POST['id_survey'];
+	$nama_usaha=$_POST['nama_usaha'];
+	$alamat_usaha=$_POST['alamat_usaha'];
+	$nama_anggota = $_POST['nama_anggota'];
+	$notelp_anggota = $_POST['notelp_anggota'];
+	$email = $_POST['email'];
+	$tanggal_survey = $_POST['tanggal_survey'];
+	$gambar=$_POST['gambar'];
+	$id_status= $_POST['id_status'];
+
+	$query3 = "UPDATE tb_survey set nama_usaha='$nama_usaha', alamat_usaha='$alamat_usaha', nama_anggota='$nama_anggota', notelp_anggota='$notelp_anggota', email='$email', tanggal_survey='$tanggal_survey' , gambar='$gambar', id_status='$id_status' WHERE id_survey='$id_survey'"; 
+
+
 		if (mysqli_query($connect, $query3)){
 		?>
 			<script type="text/javascript">
@@ -530,7 +565,11 @@ if (isset($_POST['tambah'])) {
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
+<<<<<<< HEAD
 					  null, null,null, null, null, null, null
+=======
+					  null, null,null, null, null, 
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 					  { "bSortable": false }
 					],
 					"aaSorting": [],
@@ -878,7 +917,11 @@ if (isset($_POST['tambah'])) {
 			
 				
 				$('#id-input-file-1 , #id-input-file-2').ace_file_input({
+<<<<<<< HEAD
 					no_file:'No Picture ...',
+=======
+					no_file:'No File ...',
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 					btn_choose:'Choose',
 					btn_change:'Change',
 					droppable:false,

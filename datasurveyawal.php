@@ -4,6 +4,11 @@ $queryp = "SELECT * FROM tb_survey s INNER JOIN tb_status u ON s.id_status = u.i
 $sqlp = mysqli_query($connect, $queryp);
 $datap = mysqli_fetch_assoc($sqlp);
 
+$queryp = "SELECT * FROM tb_survey";
+// $sqlp = mysqli_query($connect, $queryp);
+// $datap = mysqli_fetch_assoc($sqlp);
+
+
 $no = 1;
 $nama_usaha=$_POST['nama_usaha'];
 $alamat_usaha=$_POST['alamat_usaha'];

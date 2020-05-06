@@ -63,7 +63,11 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="../assets/images/avatars/admin.png" alt="Admin" />
 								<span class="user-info">
+<<<<<<< HEAD
 									<small> Welcome,</small>
+=======
+									<small> Login Sebagai,</small>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 									Kepala
 								</span>
 

@@ -167,15 +167,25 @@ if(isset($_POST['update'])){
 													<input type="text" name="notelp" id="form-field-1-1"  />
 												</div>
 											
+<<<<<<< HEAD
 												<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Jabatan </label>
 												<div class="col-sm-2">
 													<input type="text" name="jabatan" id="form-field-1-1"  />
+=======
+												<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Level </label>
+												<div class="col-sm-2">
+													<input type="text" name="level" id="form-field-1-1"  />
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 												</div>
 											</div>
                                             <div class="form-group">
                                             <label class="col-sm-4 control-label no-padding-right" for="form-field-1-1"> Foto </label>
 												<div class="col-sm-2">
+<<<<<<< HEAD
                                                 <input type="file"  value="upload" id="id-input-file-2" name="gambar" accept="image/x-png,image/gif,image/jpeg" />
+=======
+                                                <input type="file"  value="upload" id="id-input-file-2" name="foto" accept="image/x-png,image/gif,image/jpeg"/>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 												</div>
                                             </div>	
 								</div>
@@ -185,10 +195,17 @@ if(isset($_POST['update'])){
 								<button type="submit" name="tambah" style="margin-bottom:10px;" class="btn btn-app btn-primary">
 									<i class="ace-icon fa fa-pencil-square-o bigger-230"></i>Add
 								</button><br>
+<<<<<<< HEAD
 								<button  type="reset" style="margin-bottom:10px;" href="index.php?datapengurus" role="button" class="btn btn-sm btn-warning" data-toggle="modal"><i class="ace-icon fa fa-refresh align-middle bigger-120"></i> Reset &nbsp; &nbsp; &nbsp;&nbsp;</button><br>
 								</div>
 								
 								</div><!-- /.page-header -->
+=======
+								<button  type="reset" style="margin-bottom:10px;" href="index.php?datakeluarmasukuang" role="button" class="btn btn-sm btn-warning" data-toggle="modal"><i class="ace-icon fa fa-refresh align-middle bigger-120"></i> Reset &nbsp; &nbsp; &nbsp;&nbsp;</button><br>
+								</div>
+								
+						</div><!-- /.page-header -->
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 										</form>
 						<!-- <div class="row">
 							<div class="col-xs-12"> -->
@@ -212,7 +229,11 @@ if(isset($_POST['update'])){
 											<div class="pull-right tableTools-container"></div>
 										</div>
 										<div class="table-header">
+
 										List Data
+
+											List Data
+
 										</div>
 
 										<!-- div.table-responsive -->
@@ -227,7 +248,11 @@ if(isset($_POST['update'])){
 														<th style="text-align: center;">Username</th>
 														<th style="text-align: center;">Alamat</th>
                                                         <th style="text-align: center;">No Telepon</th>
+
                                                         <th style="text-align: center;">Jabatan</th>
+
+                                                        <th style="text-align: center;">Level</th>
+
                                                         <th style="text-align: center;">Foto</th>
 
 														<th style="text-align: center;"><i class="ace-icon fa fa-gear bigger-110 hidden-480"></i> Action</th>
@@ -236,6 +261,7 @@ if(isset($_POST['update'])){
 
 												<tbody>
 													<?php
+
 													$query = "SELECT * FROM tb_pengurus_lembaga";
 													$sql = mysqli_query($connect, $query);
 													$no = 1;
@@ -256,6 +282,28 @@ if(isset($_POST['update'])){
 																	</a>
 
 																	<a class="red" href="#modal-delete<?php echo $data['id_pengurus_lembaga']; ?>" role="button" data-toggle="modal">
+
+													$querym = "SELECT * FROM tb_pengurus_lembaga";
+													$sqlm = mysqli_query($connect, $querym);
+													$no = 1;
+													while ($datam = mysqli_fetch_array($sqlm)) { ?>
+														<tr>
+                                                            <td class="center"><?php echo $no; ?></td>
+															<td><?php echo $datam['username']; ?></td>
+                                                            <td><?php echo $datam['nama']; ?></td>
+															<td><?php echo $datam['alamat']; ?></td>
+                                                            <td><?php echo $datam['notelp']; ?></td>
+															<td><?php echo $datam['level']; ?></td>
+															<td><img src="<?php echo $datam['foto'];?>" width="100" height="100" ></td>
+
+															<td style="text-align: center;">
+																<div class="hidden-sm hidden-xs action-buttons">
+																	<a href="#modal-edit<?php echo $datam['id_pengurus_lembaga']; ?>" role="button" class="green" data-toggle="modal">
+																		<i class="ace-icon fa fa-pencil bigger-130"></i>
+																	</a>
+
+																	<a class="red" href="#modal-delete<?php echo $datam['id_pengurus_lembaga']; ?>" role="button" data-toggle="modal">
+
 																		<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																	</a>
 																</div>
@@ -268,7 +316,11 @@ if(isset($_POST['update'])){
 
 																		<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																			<li>
+
 																				<a href="#modal-edit<?php echo $data['id_pengurus_lembaga']; ?>" role="button" class="" data-toggle="modal" title="Edit">
+
+																				<a href="#modal-edit<?php echo $datam['id_user']; ?>" role="button" class="" data-toggle="modal" title="Edit">
+
 																					<span class="green">
 																						<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																					</span>
@@ -276,7 +328,11 @@ if(isset($_POST['update'])){
 																			</li>
 
 																			<li>
+<<<<<<< HEAD
 																				<a href="#modal-delete<?php echo $data['id_pengurus_lembaga']; ?>" role="button" class="" data-toggle="modal" title="Delete">
+=======
+																				<a href="#modal-delete<?php echo $datam['id_user']; ?>" role="button" class="" data-toggle="modal" title="Delete">
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 																					<span class="red">
 																						<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																					</span>
@@ -286,6 +342,7 @@ if(isset($_POST['update'])){
 																	</div>
 																</div>
 															</td>
+<<<<<<< HEAD
 															</tr>
 													<div class="modal fade" id="modal-gambar<?php echo $data['id_pengurus_lembaga']; ?>">
 														<div class="modal-dialog" style="width:80%;">
@@ -387,6 +444,97 @@ if(isset($_POST['update'])){
 														</div><!-- /.modal-content -->
 													</div><!-- /.modal-dialog -->
 												</div>
+=======
+
+
+													<div id="modal-edit<?php echo $data['id_keluar_masuk_uang']; ?>" class="modal fade" tabindex="-1">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header no-padding">
+																	<div class="table-header">
+																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+																			<span class="white">&times;</span>
+																		</button>
+																		Form Edit Data Keluar Masuk Uang
+																	</div>
+																</div>
+																<form class="form-horizontal" role="form" form action="" method="post" enctype="multipart/form-data">
+																<div class="modal-body">
+																			<input type="hidden" name="id_keluar_masuk_uang" value="<?php echo $data['id_keluar_masuk_uang']; ?>" />
+																			<div class="form-group">
+																			<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Kode </label>
+																			<select class="col-xs-12 col-sm-9" name="id_kode" >
+																					<?php
+																					$querys2 = "SELECT * FROM tb_kode ORDER BY kode ASC";
+																					$sqls2 = mysqli_query($connect, $querys2);
+																					while ($datas2 = mysqli_fetch_array($sqls2)) { 
+																					?>
+																						<option value="<?php echo $datas2['id_kode'] ?>" <?php if($datas2['id_kode']==$data['id_kode']){echo "selected='selected'";} ?>><?php echo $datas2['kode']; ?></option>
+																					<?php
+																					}
+																					?>
+																				</select>
+																			</div>
+																		<br>
+																		<div class="space-6"></div><div class="space-6"></div><div class="space-6"></div><div class="space-4"></div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Keterangan </label>
+																			<div class="col-xs-12 col-sm-9">
+																				<input type="text" name="keterangan" class="col-xs-12 col-sm-12" value="<?php echo $data['keterangan']; ?>" required="" />
+																			</div>
+																		</div>
+																		<br>
+																		<div class="space-6"></div><div class="space-6"></div><div class="space-6"></div><div class="space-4"></div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Jumlah </label>
+																			<div class="col-xs-12 col-sm-9">
+																				<input type="text" name="jumlah" class="col-xs-12 col-sm-12" value="<?php echo $data['jumlah']; ?>" required="" />
+																			</div>
+																		</div>
+																		<br>
+																		<div class="space-6"></div><div class="space-6"></div><div class="space-6"></div><div class="space-4"></div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Tanggal </label>
+																			<div class="col-xs-12 col-sm-9">
+																				<input type="date" name="tanggal" class="col-xs-12 col-sm-12" class="form-control select-dropdown" value="<?php echo $data['tanggal']; ?>" required="" />
+																			</div>
+																		</div>
+																		
+																		<div class="space-6"></div><div class="space-6"></div><div class="space-6"></div><div class="space-6"></div>
+																</div>
+																<div class="modal-footer center">
+																	<input type="submit" name="update" class="btn btn-success" value="Update Data Keluar Masuk Uang">
+																</div>	
+																</form>
+															</div><!-- /.modal-content -->
+														</div><!-- /.modal-dialog -->
+													</div>
+													<div id="modal-delete<?php echo $data['id_keluar_masuk_uang']; ?>" class="modal fade" tabindex="-1">
+														<div class="modal-dialog" >
+															<div class="modal-content">
+																<div class="modal-header no-padding red">
+																	<div class="table-header" style="background-color: red;">
+																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+																			<span class="white">&times;</span>
+																		</button>
+																		Delete Data Keluar Masuk Uang "<?php echo $data['id_keluar_masuk_uang']; ?>"
+																	</div>
+																</div>
+																<form class="form-horizontal" role="form" form action="" method="post" enctype="multipart/form-data">
+																<div class="modal-body">
+																	<label class="col-sm-12 control-label " style="color: red;">Apakah Anda yakin akan menghapus data ini? "<?php echo $data['keterangan']; ?>"</label>
+																	<input type="hidden" name="id_keluar_masuk_uang" value="<?php echo $data['id_keluar_masuk_uang']; ?>" />																
+																	<div class="space-6"></div><div class="space-6"></div><div class="space-6"></div>
+																</div>
+																 <div class="modal-footer">
+																	<input name="delete" type="submit" class="btn btn-danger" Value="Yes">
+																	<button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+																</div>
+																</form>
+															</div><!-- /.modal-content -->
+														</div><!-- /.modal-dialog -->
+													</div>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 	
 													
 													<?php $no++; } ?>			
@@ -454,7 +602,11 @@ if(isset($_POST['update'])){
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
+<<<<<<< HEAD
 					  null, null,null, null, null, null 
+=======
+					  null, null,null, null, null, 
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 					  { "bSortable": false }
 					],
 					"aaSorting": [],
@@ -802,7 +954,11 @@ if(isset($_POST['update'])){
 			
 				
 				$('#id-input-file-1 , #id-input-file-2').ace_file_input({
+<<<<<<< HEAD
 					no_file:'No Picture ...',
+=======
+					no_file:'No File ...',
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e
 					btn_choose:'Choose',
 					btn_change:'Change',
 					droppable:false,
@@ -1131,4 +1287,8 @@ if(isset($_POST['update'])){
       })
     </script>
 	</body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 2328ff179534dbfda853f546750b639997eceb5e

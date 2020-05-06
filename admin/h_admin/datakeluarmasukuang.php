@@ -265,10 +265,6 @@ if(isset($_POST['update'])){
 																				<input type="text" name="jumlah" class="col-xs-12 col-sm-12" value="<?php echo $data['jumlah']; ?>" required="" />
 																			</div>
 																		</div>
-																		<div class="space-6"></div><div class="space-6"></div><div class="space-6"></div><div class="space-4"></div>
-																		<div class="form-group">
-																			<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Tanggal </label>
-																			<div class="col-xs-12 col-sm-9">
 																				<input type="date" name="tanggal" class="col-xs-12 col-sm-12" class="form-control select-dropdown" value="<?php echo $data['tanggal']; ?>" required="" />
 																			</div>
 																		</div>
